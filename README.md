@@ -285,11 +285,11 @@ Farmer 2's controls in local co-op are the second controller or the numeric keyp
 
 ## Version history
 
-- **v1.2** (2026-11-14) - the first release under this repository's new name: the launcher is 1.2 and
-  reads this repository, and the Android package is `HarvestMoonBTN-Android-1.2.apk` with versionCode
-  2, so it installs over the earlier 1.0 one. The game in the Windows and Linux folders is the same
-  code as v1.1 - only its executable was relinked for that build, which changes its hash.
-  [v1.2](../../releases/tag/v1.2)
+- **v1.2** (2026-11-14) - the first release under this repository's new name: the launcher inside the
+  folders and on its own is 1.2 and reads this repository, and the Android package is
+  `HarvestMoonBTN-Android-1.2.apk` with versionCode 2, so it installs over the earlier 1.0 one. The
+  game itself is the same code as v1.1; its executable was relinked for this build, which is what
+  changes its hash. [v1.2](../../releases/tag/v1.2)
 - **v1.1** (2026-11-14) - the first release: the Windows and Linux folders, the Android package
   (1.0) and the launcher exe (1.1), with a `.sha256` beside each. [v1.1](../../releases/tag/v1.1)
 
