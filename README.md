@@ -35,7 +35,7 @@ needed to play.
 | Platform | Needs | Asset |
 |---|---|---|
 | Windows | Windows 10 or 11, 64-bit | `HarvestMoonBTN-Windows-x64.zip` |
-| Linux | An x86-64 distribution with glibc 2.17 or newer and SDL2 | `HarvestMoonBTN-Linux-x64.zip` |
+| Linux | An x86-64 distribution: the game needs glibc 2.17 or newer, the SDL2 shipped beside it needs 2.43, and an older system uses its own SDL2 | `HarvestMoonBTN-Linux-x64.zip` |
 | Android | Android 5.0 (API 21) or newer on a 64-bit device: `arm64-v8a`, or `x86_64` for emulators and Chromebooks | `HarvestMoonBTN-Android-1.2.apk` |
 
 - **Windows** installs nothing: the folder carries `SDL2.dll` next to the executable, and the launcher
