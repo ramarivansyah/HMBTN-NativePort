@@ -11,6 +11,7 @@ open the launcher in the folder it made.
 | `HarvestMoonBTN-Windows-x64.zip` | the game folder for Windows x64: `HarvestMoonBTN-Launcher.exe`, `HarvestMoonBTN.exe`, the data pack |
 | `HarvestMoonBTN-Linux-x64.zip` | the game folder for Linux x64: `launcher.pyw`, `HarvestMoonBTN`, the data pack |
 | `HarvestMoonBTN-Android-*.apk` | the Android package |
+| `HarvestMoonBTN-Launcher.exe` | the launcher itself, the file the **Update** button replaces (taken only from a newer version) |
 | `<asset>.sha256` | the SHA-256 of the asset beside it, which the launcher checks before it unpacks anything |
 
 The data pack in each folder is the game's own data, so nothing needs a disc image, an emulator or a
