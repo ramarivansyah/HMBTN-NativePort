@@ -35,16 +35,17 @@ needed to play.
 | Platform | Needs | Asset |
 |---|---|---|
 | Windows | Windows 10 or 11, 64-bit | `HarvestMoonBTN-Windows-x64.zip` |
-| Linux | An x86-64 distribution with glibc 2.17 or newer and SDL2 2.0 | `HarvestMoonBTN-Linux-x64.zip` |
+| Linux | An x86-64 distribution with glibc 2.17 or newer and SDL2 | `HarvestMoonBTN-Linux-x64.zip` |
 | Android | Android 5.0 (API 21) or newer on a 64-bit device: `arm64-v8a`, or `x86_64` for emulators and Chromebooks | `HarvestMoonBTN-Android-1.2.apk` |
 
 - **Windows** installs nothing: the folder carries `SDL2.dll` next to the executable, and the launcher
   is a single `.exe` that needs no Python.
-- **Linux**: the folder carries `libSDL2-2.0.so.0`, and the game loads that copy first; when it does
-  not load - an older distribution, a different C library - the game falls back to the system
-  library, so `libsdl2-2.0-0` (Debian/Ubuntu), `SDL2` (Fedora) or `sdl2` (Arch) has to be installed
-  then. The launcher in the folder is `launcher.pyw`, which needs Python 3 with tkinter; the game
-  itself (`./HarvestMoonBTN`) needs neither.
+- **Linux**: the folder carries `libSDL2-2.0.so.0` (SDL2 2.32.10), and the game loads that copy first;
+  when it does not load - an older distribution, a different C library - the game falls back to the
+  system library, so `libsdl2-2.0-0` (Debian/Ubuntu), `SDL2` (Fedora) or `sdl2` (Arch) has to be
+  installed then. If that library is too old the game names the missing call and stops. The launcher in
+  the folder is `launcher.pyw`, which needs Python 3 with tkinter; the game itself
+  (`./HarvestMoonBTN`) needs neither.
 - **Android**: the package is sideloaded, not distributed on Google Play, and it is signed with a
   debug key, so Android asks you to allow installing from the app you open the file with. The data
   pack travels inside the APK, and the folder it writes to needs no permission, so the first start
