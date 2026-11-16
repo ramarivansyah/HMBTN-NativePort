@@ -296,11 +296,16 @@ Farmer 2's controls in local co-op are the second controller or the numeric keyp
   `HarvestMoonBTN-Android-1.2.apk` with versionCode 2, so it installs over the earlier 1.0 one. The
   game itself is the same code as v1.1; its executable was relinked for this build, which is what
   changes its hash. [v1.2](../../releases/tag/v1.2)
-- **v1.1** (2026-11-14) - the first release: the Windows and Linux folders, the Android package
-  (1.0) and the launcher exe (1.1), with a `.sha256` beside each. [v1.1](../../releases/tag/v1.1)
+- **v1.1** (2026-11-14) - the Windows and Linux folders, the Android package (1.0) and the launcher
+  exe (1.1), with a `.sha256` beside each. [v1.1](../../releases/tag/v1.1)
+- **v1.0** (2026-11-16) - the version before the download page existed, built again from the commit
+  that still said 1.0 and published for the record: the Windows and Linux folders, the Android package
+  (`HarvestMoonBTN-Android-1.0.apk`) and the 1.0 launcher exe, with a `.sha256` beside each. It has no
+  Windows installer and its launcher has no *Download and play*: the folder is the game.
+  [v1.0](../../releases/tag/v1.0)
 
-Both releases carry the same four assets and a `.sha256` beside each, so an installed launcher can
-update itself and download the game from either. Every release is on the
+Each release carries its assets with a `.sha256` beside each, so an installed launcher can update
+itself and download the game from the newest one. Every release is on the
 [releases page](../../releases).
 
 ## Credits and legal
