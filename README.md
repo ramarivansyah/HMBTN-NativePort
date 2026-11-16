@@ -35,17 +35,22 @@ needed to play.
 | Platform | Needs | Asset |
 |---|---|---|
 | Windows | Windows 10 or 11, 64-bit | `HarvestMoonBTN-Windows-x64.zip` |
-| Linux | An x86-64 distribution: the game needs glibc 2.17 or newer, the SDL2 shipped beside it needs 2.43, and an older system uses its own SDL2 | `HarvestMoonBTN-Linux-x64.zip` |
+| Linux | An x86-64 distribution with glibc 2.17 or newer - Debian 8, Ubuntu 14.04 and everything since: neither the game nor the SDL2 carried beside it asks for anything newer | `HarvestMoonBTN-Linux-x64.zip` |
 | Android | Android 5.0 (API 21) or newer on a 64-bit device: `arm64-v8a`, or `x86_64` for emulators and Chromebooks | `HarvestMoonBTN-Android-1.2.apk` |
 
-- **Windows** installs nothing: the folder carries `SDL2.dll` next to the executable, and the launcher
-  is a single `.exe` that needs no Python.
-- **Linux**: the folder carries `libSDL2-2.0.so.0` (SDL2 2.32.10), and the game loads that copy first;
-  when it does not load - an older distribution, a different C library - the game falls back to the
-  system library, so `libsdl2-2.0-0` (Debian/Ubuntu), `SDL2` (Fedora) or `sdl2` (Arch) has to be
-  installed then. If that library is too old the game names the missing call and stops. The launcher in
-  the folder is `launcher.pyw`, which needs Python 3 with tkinter; the game itself
-  (`./HarvestMoonBTN`) needs neither.
+- **Windows** installs nothing to play: the folder carries `SDL2.dll` next to the executable, and the
+  launcher is a single `.exe` that needs no Python. `HarvestMoonBTN-Setup-<version>.exe` installs that
+  same folder into `C:\Program Files` - it asks for administrator rights once, and `/CURRENTUSER`
+  installs it for your account alone instead - with a Start Menu shortcut and an uninstaller, and
+  leaves saves, screenshots and recordings in place when you remove it.
+- **Linux**: the folder carries `libSDL2-2.0.so.0` (SDL2 2.32.10, built against glibc 2.17 like the game),
+  and the game loads that copy first; when it does not load - a system whose C library is not glibc,
+  such as Alpine - the game falls back to the system library, so `libsdl2-2.0-0` (Debian/Ubuntu),
+  `SDL2` (Fedora) or `sdl2` (Arch) has to be installed then. If that library is too old the game names
+  the missing call and stops. The launcher in the folder is `launcher.pyw`, which needs Python 3 with
+  tkinter; the game itself (`./HarvestMoonBTN`) needs neither. `sh install.sh` copies the folder into
+  `~/.local/share/HarvestMoonBTN` and adds a menu entry; `uninstall.sh` in that folder removes it and
+  keeps your saves unless you say otherwise.
 - **Android**: the package is sideloaded, not distributed on Google Play, and it is signed with a
   debug key, so Android asks you to allow installing from the app you open the file with. The data
   pack travels inside the APK, and the folder it writes to needs no permission, so the first start
@@ -65,7 +70,8 @@ SHA-256 published beside it in a `.sha256` file.
 | Asset | What it is for |
 |---|---|
 | `HarvestMoonBTN-Windows-x64.zip` | The game folder for Windows x64: unpack it anywhere and open `HarvestMoonBTN-Launcher.exe`. |
-| `HarvestMoonBTN-Linux-x64.zip` | The game folder for Linux x64: unpack it anywhere and open `launcher.pyw` (or run `./HarvestMoonBTN` directly). |
+| `HarvestMoonBTN-Setup-<version>.exe` | The same Windows folder as an installer: run it - it asks for administrator rights once to install into `C:\Program Files`, and `/CURRENTUSER` installs it for your account alone - and open the game from the Start Menu; an uninstaller sits in the same place. |
+| `HarvestMoonBTN-Linux-x64.zip` | The game folder for Linux x64: unpack it anywhere and open `launcher.pyw` (or run `./HarvestMoonBTN` directly); `sh install.sh` installs it with a menu entry instead. |
 | `HarvestMoonBTN-Android-<version>.apk` | The Android package: install it on a phone and open the app. |
 | `HarvestMoonBTN-Launcher.exe` | The launcher on its own, for an install you already have: the **Update** button replaces the copy in the game folder with it. |
 | `<asset>.sha256` | The digest of the asset beside it, as `sha256sum` writes it: `<hex>  <name>`. |
